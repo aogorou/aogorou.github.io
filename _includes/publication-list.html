@@ -1,0 +1,14 @@
+{% assign publications = site.publications | sort: "year" | reverse %}
+{% for category in site.publication_category %}
+<h2>{% if page.lang == "ja" %}{% if category[0] == "manuscripts" %}学術論文{% else %}博士論文{% endif %}{% else %}{{ category[1].title }}{% endif %}</h2>
+{% for publication in publications %}
+{% if publication.category == category[0] %}
+<article class="publication-entry">
+  <h3><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h3>
+  <p>{{ publication.authors }}<br><i>{{ publication.venue }}</i>, {{ publication.year }}.</p>
+  {% if publication.excerpt and page.lang != "ja" %}<p>{{ publication.excerpt | strip_html }}</p>{% endif %}
+  <p><a href="{{ publication.paper_link }}">{% if page.lang == "ja" %}論文を読む{% else %}Read publication{% endif %}</a> · <a href="{{ publication.url | relative_url }}">{% if page.lang == "ja" %}詳細{% else %}Details{% endif %}</a></p>
+</article>
+{% endif %}
+{% endfor %}
+{% endfor %}

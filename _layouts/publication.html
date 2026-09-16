@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% include base_path %}
+<div id="main" role="main">
+  {% include sidebar.html %}
+  <article class="page" itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <div class="page__inner-wrap">
+      <header>
+        <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+        <p>{{ page.authors }}<br><i>{{ page.venue }}</i>, {{ page.year }}.</p>
+      </header>
+      <section class="page__content" itemprop="text">
+        {{ content }}
+        {% if page.citation %}<h2>Citation</h2><p>{{ page.citation }}</p>{% endif %}
+        <p><a class="btn btn--primary" href="{{ page.paper_link }}">Read publication / 論文を読む</a></p>
+        <p><a href="{{ '/publications/' | relative_url }}">All publications</a> · <a href="{{ '/ja/publications/' | relative_url }}">論文一覧</a></p>
+      </section>
+    </div>
+  </article>
+</div>

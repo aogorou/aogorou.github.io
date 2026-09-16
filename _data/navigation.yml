@@ -1,0 +1,14 @@
+main:
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: CV
+    url: /cv/
+ja:
+  - title: 研究
+    url: /ja/research/
+  - title: 論文
+    url: /ja/publications/
+  - title: 経歴
+    url: /ja/cv/

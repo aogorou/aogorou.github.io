@@ -1,0 +1,7 @@
+{% include base_path %}
+<link rel="stylesheet" href="{{ '/assets/css/fontawesome.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+<link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+{% if page.lang_alt %}
+  <link rel="alternate" hreflang="{% if page.lang == 'ja' %}en{% else %}ja{% endif %}" href="{{ page.lang_alt | absolute_url }}">
+{% endif %}
